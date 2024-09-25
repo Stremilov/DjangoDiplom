@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}My Website{% endblock %}</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% include 'header.html' %}
+    {% block content %}
+        <div class="banner-slider">
+            {% for banner in banners %}
+                <img src="{{ banner.image.url }}" alt="Banner {{ banner.id }}">
+            {% endfor %}
+        </div>
+    {% endblock %}
+    {% include 'footer.html' %}
+</body>
+</html>

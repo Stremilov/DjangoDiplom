@@ -1,0 +1,11 @@
+{% for category in categories %}
+    <div class="banner-slider">
+        {% for banner in banners %}
+            <img src="{{ banner.image.url }}" alt="Banner {{ banner.id }}">
+        {% endfor %}
+    </div>
+
+    {% if category.is_active %}
+        <a href="{% url 'category_detail' category.id %}">{{ category.name }}</a>
+    {% endif %}
+{% endfor %}
